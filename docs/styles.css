@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    font-family: 'Arial', sans-serif;
+    color: #f1f1f1;
+    text-align: center;
+}
+
+.landing-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.domain-name h1 {
+    font-size: 4rem;
+    color: #f1f1f1;
+    margin-bottom: 20px;
+}
+
+.carousel-container p {
+    font-size: 1.5rem;
+    color: #c9c9c9;
+}
+
+footer p {
+    margin-top: 50px;
+    font-size: 1rem;
+}
+
+footer a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
