@@ -37,43 +37,46 @@ footer a:hover {
     text-decoration: underline;
 }
 
-.carousel-container {
-    height: 200px; /* Fixed height to maintain space for the carousel */
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 20px;
-    z-index: 1; /* Ensure carousel is on top */
-}
-
-#carousel-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: center;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    z-index: 2; /* Make sure the list is above other elements */
-}
-
 #carousel-list li {
     font-size: clamp(1.25rem, 2.5vw, 1.75rem); /* Responsive font size */
-    color: #ffffff; /* High contrast color */
+    color: #ffffff; /* Full highlight color for active word */
     margin-bottom: 5px;
     opacity: 0; /* Initial opacity */
-    transform: translateY(20px); /* Start below */
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transform: translateY(20px); /* Start from below */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out, color 1s ease-in-out;
 }
 
 .fade-in {
-    opacity: 1 !important; /* Force visibility */
-    transform: translateY(0); /* Bring to position */
+    opacity: 1; /* Fully visible for the current word */
+    color: #ffffff; /* Highlight the current word */
+    transform: translateY(0); /* Move to the correct position */
 }
 
 .fade-out {
-    opacity: 0;
-    transform: translateY(-20px);
+    opacity: 0.3; /* Fade previous words into shadow */
+    transform: translateY(-20px); /* Move upwards */
+    color: rgba(255, 255, 255, 0.5); /* Dark shadow effect */
+}
+
+/* Gradual darkening for the previous words */
+#carousel-list li:nth-child(2) {
+    opacity: 0.5;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#carousel-list li:nth-child(3) {
+    opacity: 0.4;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#carousel-list li:nth-child(4) {
+    opacity: 0.3;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#carousel-list li:nth-child(5) {
+    opacity: 0.2;
+    color: rgba(255, 255, 255, 0.4);
 }
 
 
