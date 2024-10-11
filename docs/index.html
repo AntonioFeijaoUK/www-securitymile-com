@@ -3,35 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SecurityMile - Cybersecurity education and services, focused on expert security solutions.">
+    <meta name="description" content="SecurityMile offers top-notch cybersecurity education and services including threat detection, incident response, cloud security, and penetration testing. Learn and secure your digital world.">
     <meta name="author" content="Antonio Feijao UK">
-    <title>SecurityMile - Cybersecurity Education</title>
+    <meta name="keywords" content="cybersecurity, education, cloud security, penetration testing, incident response, threat detection, network security, zero trust">
+    <title>SecurityMile - Cybersecurity Education and Services</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="landing-page">
         <div class="domain-name">
             <h1>SecurityMile.com</h1>
+            <p>Your trusted resource for cybersecurity education, threat detection, and defence solutions.</p>
         </div>
         <div class="carousel-container">
-            <p id="carousel-text"></p>
+            <ul id="carousel-list"></ul>
         </div>
         <footer>
             <p>By <a href="https://www.antoniofeijao.com/" target="_blank" rel="noopener noreferrer">Antonio Feijao UK</a></p>
         </footer>
     </div>
 
-    <script>
-        const keywords = ["Cybersecurity", "Penetration Testing", "Cloud Security", "Incident Response", "Threat Intelligence", "Zero Trust", "Network Security"];
-        let index = 0;
-        const carouselText = document.getElementById('carousel-text');
-
-        function updateCarousel() {
-            carouselText.textContent = keywords[index];
-            index = (index + 1) % keywords.length;
-        }
-        
-        setInterval(updateCarousel, 2000);
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
