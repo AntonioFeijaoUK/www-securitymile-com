@@ -1,46 +1,19 @@
-const keywords = [
-    "Cybersecurity Solutions", 
-    "Penetration Testing", 
-    "Cloud Security", 
-    "Incident Response", 
-    "Threat Intelligence", 
-    "Zero Trust Architecture", 
-    "Network Defence", 
-    "Data Encryption", 
-    "Endpoint Protection", 
-    "Malware Analysis", 
-    "Phishing Prevention", 
-    "Access Control", 
-    "Multi-Factor Authentication", 
-    "Security Awareness Training", 
-    "Digital Forensics", 
-    "Vulnerability Management", 
-    "Firewall Configuration", 
-    "Intrusion Detection Systems", 
-    "Network Monitoring", 
-    "Compliance Auditing", 
-    "Risk Assessment", 
-    "Application Security", 
-    "DDoS Protection", 
-    "Incident Reporting", 
-    "Security Information and Event Management", 
-    "Identity Management", 
-    "Data Privacy", 
-    "Cryptographic Key Management", 
-    "Mobile Device Security", 
-    "Cloud Compliance", 
-    "API Security", 
-    "Cyber Threat Hunting", 
-    "Governance Risk and Compliance"
-];
-
-const carouselList = document.getElementById('carousel-list');
 let keywordIndex = 0;
+const carouselList = document.getElementById('carousel-list');
 
-// Function to update the carousel effect
-function updateCarousel() {
+// Fetch keywords from the JSON file
+fetch('keywords.json')
+    .then(response => response.json())
+    .then(data => {
+        const keywords = data.keywords;
+        updateCarousel(keywords);
+        setInterval(() => updateCarousel(keywords), 2000);
+    })
+    .catch(error => console.error('Error fetching keywords:', error));
+
+function updateCarousel(keywords) {
     const listItems = document.querySelectorAll('#carousel-list li');
-    
+
     // Create a new list item for the current keyword
     const newItem = document.createElement('li');
     newItem.textContent = keywords[keywordIndex];
@@ -60,6 +33,3 @@ function updateCarousel() {
     // Update the index to cycle through the keywords
     keywordIndex = (keywordIndex + 1) % keywords.length;
 }
-
-// Update the carousel every 2 seconds
-setInterval(updateCarousel, 2000);
