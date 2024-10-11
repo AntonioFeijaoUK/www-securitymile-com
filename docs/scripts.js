@@ -2,7 +2,7 @@ let keywordIndex = 0;
 const carouselList = document.getElementById('carousel-list');
 
 // Fetch keywords from the JSON file
-fetch('keywords.json')
+fetch('/keywords.json')
     .then(response => response.json())
     .then(data => {
         const keywords = data.keywords;
