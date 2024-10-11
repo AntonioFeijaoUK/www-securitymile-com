@@ -5,8 +5,35 @@ const keywords = [
     "Incident Response", 
     "Threat Intelligence", 
     "Zero Trust Architecture", 
-    "Network Defence"
+    "Network Defence", 
+    "Data Encryption", 
+    "Endpoint Protection", 
+    "Malware Analysis", 
+    "Phishing Prevention", 
+    "Access Control", 
+    "Multi-Factor Authentication", 
+    "Security Awareness Training", 
+    "Digital Forensics", 
+    "Vulnerability Management", 
+    "Firewall Configuration", 
+    "Intrusion Detection Systems", 
+    "Network Monitoring", 
+    "Compliance Auditing", 
+    "Risk Assessment", 
+    "Application Security", 
+    "DDoS Protection", 
+    "Incident Reporting", 
+    "Security Information and Event Management", 
+    "Identity Management", 
+    "Data Privacy", 
+    "Cryptographic Key Management", 
+    "Mobile Device Security", 
+    "Cloud Compliance", 
+    "API Security", 
+    "Cyber Threat Hunting", 
+    "Governance Risk and Compliance"
 ];
+
 const carouselList = document.getElementById('carousel-list');
 let keywordIndex = 0;
 
