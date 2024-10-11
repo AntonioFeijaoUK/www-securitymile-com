@@ -13,17 +13,52 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 0 20px; /* Padding for mobile */
 }
 
 .domain-name h1 {
-    font-size: 4rem;
+    font-size: clamp(2.5rem, 6vw, 5rem); /* Responsive font size */
     color: #f1f1f1;
+    margin-bottom: 10px;
+}
+
+.domain-name p {
+    font-size: clamp(1rem, 2.5vw, 1.5rem); /* Responsive for mobile */
+    margin-bottom: 20px;
+    color: #d1d1d1;
+}
+
+.carousel-container {
+    height: 200px; /* Fixed height to maintain space for the carousel */
+    position: relative;
+    overflow: hidden; /* Hide the overflow when words fade out */
     margin-bottom: 20px;
 }
 
-.carousel-container p {
-    font-size: 1.5rem;
+#carousel-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+#carousel-list li {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem); /* Carousel text adapts to screen size */
     color: #c9c9c9;
+    margin-bottom: 5px;
+    opacity: 0;
+    transition: opacity 1s ease-in, transform 1s ease-in;
+    transform: translateY(20px); /* Start from below */
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0); /* Fade-in from below */
+}
+
+.fade-out {
+    opacity: 0;
+    transform: translateY(-20px); /* Fade-out upwards */
 }
 
 footer p {
