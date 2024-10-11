@@ -42,6 +42,7 @@ footer a:hover {
     position: relative;
     overflow: hidden;
     margin-bottom: 20px;
+    z-index: 1; /* Ensure carousel is on top */
 }
 
 #carousel-list {
@@ -49,29 +50,30 @@ footer a:hover {
     padding: 0;
     margin: 0;
     text-align: center;
-    height: 100%; /* Ensure it takes up the available height */
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    z-index: 1; /* Ensure it's above other elements */
+    z-index: 2; /* Make sure the list is above other elements */
 }
 
 #carousel-list li {
     font-size: clamp(1.25rem, 2.5vw, 1.75rem); /* Responsive font size */
-    color: #c9c9c9; /* Ensure text contrast with background */
+    color: #ffffff; /* High contrast color */
     margin-bottom: 5px;
     opacity: 0; /* Initial opacity */
-    transform: translateY(20px); /* Start from below */
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Ensure smooth transition */
+    transform: translateY(20px); /* Start below */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
 .fade-in {
     opacity: 1 !important; /* Force visibility */
-    transform: translateY(0); /* Bring to the correct position */
+    transform: translateY(0); /* Bring to position */
 }
 
 .fade-out {
-    opacity: 0; /* Fade out */
-    transform: translateY(-20px); /* Move upwards */
+    opacity: 0;
+    transform: translateY(-20px);
 }
+
 
