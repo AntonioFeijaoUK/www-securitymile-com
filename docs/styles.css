@@ -3,16 +3,16 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Full viewport height */
+    min-height: 100vh;
     background-color: #1a1a1a;
     font-family: 'Arial', sans-serif;
     color: #f1f1f1;
-    max-width: 100vw; /* Prevent horizontal overflow */
-    overflow-x: hidden; /* Disable horizontal scroll */
+    max-width: 100vw;
+    overflow-x: hidden;
 }
 
 .landing-page {
-    flex: 1; /* Allow content to push footer down */
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -21,14 +21,20 @@ body {
 }
 
 .domain-name h1 {
-    position: fixed; /* Keep title fixed at the top */
-    top: 20px; /* Set distance from top */
-    width: 100%; /* Full width */
-    text-align: center; /* Center text */
-    z-index: 100; /* Ensure it stays above other elements */
+    position: fixed;
+    top: 20px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
     color: #ffffff;
-    font-size: 3rem; /* Adjust to your preferred size */
+    font-size: 3rem;
     margin: 0;
+}
+
+.carousel-container {
+    height: 300px; /* Adjust the height based on desired visibility */
+    position: relative;
+    overflow: hidden; /* Hide overflowing items */
 }
 
 #carousel-list {
@@ -36,30 +42,25 @@ body {
     padding: 0;
     margin: 0;
     text-align: center;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     z-index: 2;
-    transform: perspective(500px); /* Depth effect */
+    transform: perspective(500px);
 }
 
 #carousel-list li {
-    font-size: clamp(1.25rem, 2.5vw, 1.75rem); /* Responsive font size */
-    color: #ffffff; /* Highlight current word */
-    margin-bottom: 5px;
-    transform: translateY(20px) scale(1); /* Normal size and positioned below */
-    transition: transform 10s linear; /* Slow transition to achieve scrolling effect */
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    color: #ffffff;
+    margin-bottom: 10px;
+    transform: translateY(0); /* Set initial Y position */
+    transition: transform 0.1s linear; /* Smooth scrolling */
 }
 
-/* Footer always fixed at the bottom */
 footer {
     padding: 10px;
     background-color: #111;
     color: #fff;
     width: 100%;
     text-align: center;
-    position: fixed; /* Fixed at the bottom */
+    position: fixed;
     bottom: 0;
     left: 0;
 }
