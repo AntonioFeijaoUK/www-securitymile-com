@@ -20,23 +20,6 @@ body {
     padding: 0 20px;
 }
 
-footer {
-    padding: 10px;
-    background-color: #111;
-    color: #fff;
-    width: 100%;
-    text-align: center;
-}
-
-footer a {
-    color: #1e90ff;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
 #carousel-list {
     list-style: none; /* Remove default list style */
     padding: 0;
@@ -47,6 +30,7 @@ footer a:hover {
     flex-direction: column;
     justify-content: flex-start;
     z-index: 2;
+    transform: perspective(1000px); /* Add perspective for the 'depth' effect */
 }
 
 #carousel-list li {
@@ -54,50 +38,84 @@ footer a:hover {
     color: #ffffff; /* Full highlight color for active word */
     margin-bottom: 5px;
     opacity: 0; /* Initial opacity */
-    transform: translateY(20px); /* Start from below */
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out, color 1s ease-in-out;
+    transform: translateY(20px) scale(1); /* Start from below and normal size */
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
+/* The fully visible word */
 .fade-in {
     opacity: 1; /* Fully visible for the current word */
     color: #ffffff; /* Highlight the current word */
-    transform: translateY(0); /* Move to the correct position */
+    transform: translateY(0) scale(1); /* Centered at full size */
 }
 
-.fade-out {
-    opacity: 0.3; /* Fade previous words into shadow */
-    transform: translateY(-20px); /* Move upwards */
-    color: rgba(255, 255, 255, 0.5); /* Dark shadow effect */
-}
-
-/* Gradual darkening for the previous words */
+/* Words gradually move upwards, shrink, and fade */
 #carousel-list li:nth-child(2) {
-    opacity: 0.5;
-    color: rgba(255, 255, 255, 0.7);
+    opacity: 0.8;
+    transform: translateY(-10px) scale(0.95);
 }
 
 #carousel-list li:nth-child(3) {
-    opacity: 0.4;
-    color: rgba(255, 255, 255, 0.6);
+    opacity: 0.7;
+    transform: translateY(-20px) scale(0.9);
 }
 
 #carousel-list li:nth-child(4) {
-    opacity: 0.3;
-    color: rgba(255, 255, 255, 0.5);
+    opacity: 0.6;
+    transform: translateY(-30px) scale(0.85);
 }
 
 #carousel-list li:nth-child(5) {
-    opacity: 0.2;
-    color: rgba(255, 255, 255, 0.4);
+    opacity: 0.5;
+    transform: translateY(-40px) scale(0.8);
 }
 
-/* Footer styles to ensure it is fixed at the bottom */
+#carousel-list li:nth-child(6) {
+    opacity: 0.4;
+    transform: translateY(-50px) scale(0.75);
+}
+
+#carousel-list li:nth-child(7) {
+    opacity: 0.3;
+    transform: translateY(-60px) scale(0.7);
+}
+
+#carousel-list li:nth-child(8) {
+    opacity: 0.2;
+    transform: translateY(-70px) scale(0.65);
+}
+
+#carousel-list li:nth-child(9) {
+    opacity: 0.15;
+    transform: translateY(-80px) scale(0.6);
+}
+
+#carousel-list li:nth-child(10) {
+    opacity: 0.1;
+    transform: translateY(-90px) scale(0.55);
+}
+
+#carousel-list li:nth-child(11),
+#carousel-list li:nth-child(12),
+#carousel-list li:nth-child(13),
+#carousel-list li:nth-child(14),
+#carousel-list li:nth-child(15),
+#carousel-list li:nth-child(16),
+#carousel-list li:nth-child(17),
+#carousel-list li:nth-child(18),
+#carousel-list li:nth-child(19),
+#carousel-list li:nth-child(20) {
+    opacity: 0.05;
+    transform: translateY(-100px) scale(0.5); /* Very faded and small */
+}
+
+/* Footer remains fixed at the bottom */
 footer {
     padding: 10px;
     background-color: #111;
     color: #fff;
     width: 100%;
     text-align: center;
-    position: relative; /* Change to relative for proper positioning */
-    margin-top: auto; /* Push footer to the bottom of the page */
+    position: relative;
+    margin-top: auto;
 }
