@@ -30,7 +30,7 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     z-index: 2;
-    transform: perspective(1000px); /* Add perspective for the 'depth' effect */
+    transform: perspective(500px); /* More perspective for the 'depth' effect */
 }
 
 #carousel-list li {
@@ -38,8 +38,8 @@ body {
     color: #ffffff; /* Full highlight color for active word */
     margin-bottom: 5px;
     opacity: 0; /* Initial opacity */
-    transform: translateY(20px) scale(1); /* Start from below and normal size */
-    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+    transform: translateY(40px) scale(1); /* Start further below and normal size */
+    transition: opacity 3s ease-in-out, transform 3s ease-in-out; /* Longer transition for smooth flow */
 }
 
 /* The fully visible word */
@@ -51,50 +51,51 @@ body {
 
 /* Words gradually move upwards, shrink, and fade */
 #carousel-list li:nth-child(2) {
-    opacity: 0.8;
-    transform: translateY(-10px) scale(0.95);
+    opacity: 0.9;
+    transform: translateY(-10px) scale(0.98);
 }
 
 #carousel-list li:nth-child(3) {
-    opacity: 0.7;
-    transform: translateY(-20px) scale(0.9);
+    opacity: 0.85;
+    transform: translateY(-20px) scale(0.96);
 }
 
 #carousel-list li:nth-child(4) {
-    opacity: 0.6;
-    transform: translateY(-30px) scale(0.85);
+    opacity: 0.8;
+    transform: translateY(-30px) scale(0.94);
 }
 
 #carousel-list li:nth-child(5) {
-    opacity: 0.5;
-    transform: translateY(-40px) scale(0.8);
+    opacity: 0.75;
+    transform: translateY(-40px) scale(0.92);
 }
 
 #carousel-list li:nth-child(6) {
-    opacity: 0.4;
-    transform: translateY(-50px) scale(0.75);
+    opacity: 0.7;
+    transform: translateY(-50px) scale(0.9);
 }
 
 #carousel-list li:nth-child(7) {
-    opacity: 0.3;
-    transform: translateY(-60px) scale(0.7);
+    opacity: 0.65;
+    transform: translateY(-60px) scale(0.88);
 }
 
 #carousel-list li:nth-child(8) {
-    opacity: 0.2;
-    transform: translateY(-70px) scale(0.65);
+    opacity: 0.6;
+    transform: translateY(-70px) scale(0.86);
 }
 
 #carousel-list li:nth-child(9) {
-    opacity: 0.15;
-    transform: translateY(-80px) scale(0.6);
+    opacity: 0.55;
+    transform: translateY(-80px) scale(0.84);
 }
 
 #carousel-list li:nth-child(10) {
-    opacity: 0.1;
-    transform: translateY(-90px) scale(0.55);
+    opacity: 0.5;
+    transform: translateY(-90px) scale(0.82);
 }
 
+/* Add more words fading and scaling out gradually */
 #carousel-list li:nth-child(11),
 #carousel-list li:nth-child(12),
 #carousel-list li:nth-child(13),
@@ -106,16 +107,17 @@ body {
 #carousel-list li:nth-child(19),
 #carousel-list li:nth-child(20) {
     opacity: 0.05;
-    transform: translateY(-100px) scale(0.5); /* Very faded and small */
+    transform: translateY(-150px) scale(0.75); /* Smaller size and fading out */
 }
 
-/* Footer remains fixed at the bottom */
+/* Footer always fixed at the bottom */
 footer {
     padding: 10px;
     background-color: #111;
     color: #fff;
     width: 100%;
     text-align: center;
-    position: relative;
-    margin-top: auto;
+    position: fixed; /* Fixed positioning to keep it at the bottom */
+    bottom: 0; /* Always at the bottom */
+    left: 0; /* Align with left of the viewport */
 }
