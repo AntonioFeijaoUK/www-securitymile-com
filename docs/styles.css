@@ -12,7 +12,7 @@ body {
 }
 
 .landing-page {
-    flex: 1; /* This allows the content to expand and push footer down */
+    flex: 1; /* Allow content to push footer down */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -20,8 +20,19 @@ body {
     padding: 0 20px;
 }
 
+.domain-name h1 {
+    position: fixed; /* Keep title fixed at the top */
+    top: 20px; /* Set distance from top */
+    width: 100%; /* Full width */
+    text-align: center; /* Center text */
+    z-index: 100; /* Ensure it stays above other elements */
+    color: #ffffff;
+    font-size: 3rem; /* Adjust to your preferred size */
+    margin: 0;
+}
+
 #carousel-list {
-    list-style: none; /* Remove default list style */
+    list-style: none;
     padding: 0;
     margin: 0;
     text-align: center;
@@ -30,84 +41,15 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     z-index: 2;
-    transform: perspective(500px); /* More perspective for the 'depth' effect */
+    transform: perspective(500px); /* Depth effect */
 }
 
 #carousel-list li {
     font-size: clamp(1.25rem, 2.5vw, 1.75rem); /* Responsive font size */
-    color: #ffffff; /* Full highlight color for active word */
+    color: #ffffff; /* Highlight current word */
     margin-bottom: 5px;
-    opacity: 0; /* Initial opacity */
-    transform: translateY(40px) scale(1); /* Start further below and normal size */
-    transition: opacity 3s ease-in-out, transform 3s ease-in-out; /* Longer transition for smooth flow */
-}
-
-/* The fully visible word */
-.fade-in {
-    opacity: 1; /* Fully visible for the current word */
-    color: #ffffff; /* Highlight the current word */
-    transform: translateY(0) scale(1); /* Centered at full size */
-}
-
-/* Words gradually move upwards, shrink, and fade */
-#carousel-list li:nth-child(2) {
-    opacity: 0.9;
-    transform: translateY(-10px) scale(0.98);
-}
-
-#carousel-list li:nth-child(3) {
-    opacity: 0.85;
-    transform: translateY(-20px) scale(0.96);
-}
-
-#carousel-list li:nth-child(4) {
-    opacity: 0.8;
-    transform: translateY(-30px) scale(0.94);
-}
-
-#carousel-list li:nth-child(5) {
-    opacity: 0.75;
-    transform: translateY(-40px) scale(0.92);
-}
-
-#carousel-list li:nth-child(6) {
-    opacity: 0.7;
-    transform: translateY(-50px) scale(0.9);
-}
-
-#carousel-list li:nth-child(7) {
-    opacity: 0.65;
-    transform: translateY(-60px) scale(0.88);
-}
-
-#carousel-list li:nth-child(8) {
-    opacity: 0.6;
-    transform: translateY(-70px) scale(0.86);
-}
-
-#carousel-list li:nth-child(9) {
-    opacity: 0.55;
-    transform: translateY(-80px) scale(0.84);
-}
-
-#carousel-list li:nth-child(10) {
-    opacity: 0.5;
-    transform: translateY(-90px) scale(0.82);
-}
-
-/* Add more words fading and scaling out gradually */
-#carousel-list li:nth-child(11),
-#carousel-list li:nth-child(12),
-#carousel-list li:nth-child(13),
-#carousel-list li:nth-child(14),
-#carousel-list li:nth-child(15),
-#carousel-list li:nth-child(16),
-#carousel-list li:nth-child(17),
-#carousel-list li:nth-child(18),
-#carousel-list li:nth-child(19),
-#carousel-list li:nth-child(20) {
-    opacity: 0.05;
-    transform: translateY(-150px) scale(0.75); /* Smaller size and fading out */
+    transform: translateY(20px) scale(1); /* Normal size and positioned below */
+    transition: transform 10s linear; /* Slow transition to achieve scrolling effect */
 }
 
 /* Footer always fixed at the bottom */
@@ -117,7 +59,7 @@ footer {
     color: #fff;
     width: 100%;
     text-align: center;
-    position: fixed; /* Fixed positioning to keep it at the bottom */
-    bottom: 0; /* Always at the bottom */
-    left: 0; /* Align with left of the viewport */
+    position: fixed; /* Fixed at the bottom */
+    bottom: 0;
+    left: 0;
 }
