@@ -6,39 +6,32 @@ fetch('/keywords.json')
     .then(response => response.json())
     .then(data => {
         const keywords = data.keywords;
-        updateCarousel(keywords);
-        setInterval(() => updateCarousel(keywords), 2000);
+        
+        // Populate carousel with all keywords at once
+        keywords.forEach((keyword, index) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = keyword;
+            listItem.style.transform = `translateY(${index * 50}px)`;
+            carouselList.appendChild(listItem);
+        });
+        
+        // Start the scrolling effect
+        setInterval(() => scrollCarousel(keywords), 100);
     })
     .catch(error => console.error('Error fetching keywords:', error));
 
-function updateCarousel(keywords) {
+function scrollCarousel(keywords) {
     const listItems = document.querySelectorAll('#carousel-list li');
 
-    // Create a new list item for the current keyword
-    const newItem = document.createElement('li');
-    newItem.textContent = keywords[keywordIndex];
-    newItem.classList.add('fade-in');
+    listItems.forEach((li, index) => {
+        const currentY = parseFloat(li.style.transform.match(/translateY\((.*)px\)/)[1]);
+        const newY = currentY - 1;  // Adjust this value for smoother or faster scrolling
+        li.style.transform = `translateY(${newY}px)`;
 
-    // Insert the new item at the top
-    carouselList.insertBefore(newItem, carouselList.firstChild);
-
-    // If there are more than 5 items, remove the oldest one
-    if (listItems.length >= 5) {
-        listItems[listItems.length - 1].classList.add('fade-out');
-        setTimeout(() => {
-            carouselList.removeChild(listItems[listItems.length - 1]);
-        }, 1000);  // 1 second to allow fade-out effect
-    }
-
-    // Update the index to cycle through the keywords
-    keywordIndex = (keywordIndex + 1) % keywords.length;
-}
-
-function updateCarousel() {
-    // Keep updating transform to scroll words upwards
-    document.querySelectorAll('#carousel-list li').forEach((li, index) => {
-        li.style.transform = `translateY(${index * -50}px) scale(${1 - index * 0.05})`;
+        // Reset position when the item goes off-screen
+        if (newY < -50) {
+            const lastY = parseFloat(listItems[listItems.length - 1].style.transform.match(/translateY\((.*)px\)/)[1]);
+            li.style.transform = `translateY(${lastY + 50}px)`;
+        }
     });
 }
-
-setInterval(updateCarousel, 100); // Adjust the timing for smoother updates
