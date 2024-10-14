@@ -33,3 +33,12 @@ function updateCarousel(keywords) {
     // Update the index to cycle through the keywords
     keywordIndex = (keywordIndex + 1) % keywords.length;
 }
+
+function updateCarousel() {
+    // Keep updating transform to scroll words upwards
+    document.querySelectorAll('#carousel-list li').forEach((li, index) => {
+        li.style.transform = `translateY(${index * -50}px) scale(${1 - index * 0.05})`;
+    });
+}
+
+setInterval(updateCarousel, 100); // Adjust the timing for smoother updates
