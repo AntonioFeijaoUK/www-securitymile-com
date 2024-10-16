@@ -1,14 +1,16 @@
-// Fetch keywords from the JSON file and populate the grid
+const keywordsList = document.getElementById('keywords-list');
+
+// Fetch keywords from the JSON file and populate the list
 fetch('/keywords.json')
     .then(response => response.json())
     .then(data => {
-        const keywordsGrid = document.getElementById('keywords-grid');
         const keywords = data.keywords;
 
+        // Loop through the keywords and append them to the list
         keywords.forEach(keyword => {
-            const keywordDiv = document.createElement('div');
-            keywordDiv.textContent = keyword;
-            keywordsGrid.appendChild(keywordDiv);
+            const listItem = document.createElement('li');
+            listItem.textContent = keyword;
+            keywordsList.appendChild(listItem);
         });
     })
     .catch(error => console.error('Error fetching keywords:', error));
