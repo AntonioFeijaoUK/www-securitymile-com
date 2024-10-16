@@ -13,7 +13,7 @@ fetch('/keywords.json')
             keywordSpan.textContent = keyword;
             
             // Adjust font size between 18px and 32px
-            const fontSize = Math.floor(Math.random() * 15) + 18; // Between 18px and 32px
+            const fontSize = Math.floor(Math.random() * 15) + 32; // Between 18px and 32px
             keywordSpan.style.fontSize = fontSize + 'px';
             keywordSpan.style.margin = '10px';
             keywordSpan.style.display = 'inline-block';
