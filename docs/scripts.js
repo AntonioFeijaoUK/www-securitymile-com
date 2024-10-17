@@ -27,16 +27,16 @@ fetch('/keywords.json')
 // Helper function to generate suitable colours for dark themes
 function getDarkThemeColor() {
     const darkThemeColors = [
-        '#FFD700', // Gold
-        '#ADFF2F', // Green Yellow
-        '#FF4500', // Orange Red
-        '#1E90FF', // Dodger Blue
-        '#7FFFD4', // Aquamarine
-        '#FF69B4', // Hot Pink
-        '#BA55D3', // Medium Orchid
+        '#4682B4', // Steel Blue
+        '#00BFFF', // Deep Sky Blue
         '#32CD32', // Lime Green
-        '#FF8C00', // Dark Orange
-        '#00CED1'  // Dark Turquoise
+        '#66CDAA', // Medium Aquamarine
+        '#20B2AA', // Light Sea Green
+        '#5F9EA0', // Cadet Blue
+        '#008080', // Teal
+        '#3CB371', // Medium Sea Green
+        '#1E90FF', // Dodger Blue
+        '#2E8B57'  // Sea Green
     ];
     return darkThemeColors[Math.floor(Math.random() * darkThemeColors.length)];
 }
