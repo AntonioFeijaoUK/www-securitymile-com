@@ -14,7 +14,7 @@ fetch('/keywords.json')
             keywordSpan.setAttribute('aria-label', keyword); // Accessibility
 
             // Adjust font size between 12px and 24px
-            const fontSize = Math.floor(Math.random() * 22) + 12; // Between 12px and 44px
+            const fontSize = Math.floor(Math.random() * (44 - 12 + 1)) + 12; // Between 12px and 44px
             keywordSpan.style.fontSize = fontSize + 'px';
             keywordSpan.style.color = getDarkThemeColor(); // Use dark theme colours
 
