@@ -6,7 +6,7 @@ fetch('/keywords.json')
 
         // Get the word cloud container
         const wordCloudContainer = document.getElementById('word-cloud');
-
+    
         // Create each keyword as a span with varying sizes
         keywords.forEach(keyword => {
             const keywordSpan = document.createElement('span');
