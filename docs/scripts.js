@@ -11,14 +11,15 @@ fetch('/keywords.json')
         keywords.forEach(keyword => {
             const keywordSpan = document.createElement('span');
             keywordSpan.textContent = keyword;
-            
-            // Adjust font size between 18px and 32px
-            const fontSize = Math.floor(Math.random() * 32) + 12; // Between 18px and 32px
+            keywordSpan.setAttribute('aria-label', keyword); // Accessibility
+
+            // Adjust font size between 12px and 24px
+            const fontSize = Math.floor(Math.random() * 22) + 12; // Between 12px and 44px
             keywordSpan.style.fontSize = fontSize + 'px';
-            keywordSpan.style.margin = '10px';
-            keywordSpan.style.display = 'inline-block';
             keywordSpan.style.color = getDarkThemeColor(); // Use dark theme colours
-            
+
+            keywordSpan.classList.add('keyword'); // Add CSS class for other styles
+
             wordCloudContainer.appendChild(keywordSpan);
         });
     })
