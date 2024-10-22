@@ -23,13 +23,13 @@ body {
     margin: 20px 0;
 }
 
-.about-section, .services-section, .trust-section, .keywords-section {
+.about-section, .services-section, .trust-section, certifications, .keywords-section {
     width: 100%;
     max-width: 800px;
     margin: 40px 0;
 }
 
-.about-section h2, .services-section h2, .trust-section h2, .keywords-section h2 {
+.about-section h2, .services-section h2, .trust-section h2, certifications h2, .keywords-section h2 {
     color: #50aaff;
     font-size: 2rem;
     margin-bottom: 10px;
