@@ -53,7 +53,7 @@ body {
 .keywords-section {
     width: 100%; /* Full width for sections */
     max-width: 800px; /* Max width for readability */
-    margin: 40px 0; /* Vertical spacing between sections */
+    margin: 10px 0; /* Vertical spacing between sections */
 }
 
 /* Section Headings */
